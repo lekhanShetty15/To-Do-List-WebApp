@@ -19,14 +19,31 @@ function addTask() {
 
         document.getElementById("input").value = "";
         document.getElementById("description").value = "";
+        saveData();
     } else {
         alert("Please enter all the fields");
     }
+    
+
 }
 
 function removeTask(del){
     del.remove()
+    saveData()
 }
+
+function saveData(){
+    localStorage.setItem("data", display.innerHTML)
+}
+
+function showData(){
+    display.innerHTML = localStorage.getItem("data");
+   
+}
+showData();
+
+
+
 
 
 
